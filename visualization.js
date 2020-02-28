@@ -52,6 +52,7 @@ var map_ae26379126cd4ce79aea9d0f395ec09f = L.map(
                     return {"fillOpacity": 0.8, "weight": 3};
             }
         }
+
         function geo_json_dc64d985f99647e7b35676bc82a64cc7_onEachFeature(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -62,29 +63,24 @@ var map_ae26379126cd4ce79aea9d0f395ec09f = L.map(
                 },
                 click: function(e) {
                     map_ae26379126cd4ce79aea9d0f395ec09f.fitBounds(e.target.getBounds());
-                    select(e.target);
 
                             $.ajax({
                                 dataType: "json",
                                     url: "csvjson.json",
                                     success: function(dati) {
                                         dati.forEach(function(arrayItem) {
-                                            if (arrayItem["Nome comune"] == e.target.feature.properties.NOME_COM) {
+                                            if (arrayItem["Comune"] == e.target.feature.properties.NOME_COM) {
                                                     $('#welcome').remove();
                                                     $('.information').html('');
                                                     $('.information').html('<div class="card alert-success mb-3"> <h3 class="card-header">Zona '
-                                                        + arrayItem["NOME_COM"] +'</h3> <div class="card-body text-right pb-0"> <ul style="list-style-type:none"> <li><h6> Quartiere: '+ 
-                                                        e.target.feature.properties.PUNTEGGIOSCUOLA1516 +'</h6></li> <li><h6> Abitanti (2017): '+ e.target.feature.properties.Value1 +
+                                                        + arrayItem["Comune"] +'</h3> <div class="card-body text-right pb-0"> <ul style="list-style-type:none"> <li><h6> Quartiere: '+ 
+                                                        e.target.PUNTEGGIOSCUOLA1516 +'</h6></li> <li><h6> Abitanti (2017): '+ e.target.numero_di_scuole +
                                                         '</h6></li> </ul> </div> </div>');
                                                 }
                                         })
                                     }
 
                                     })
-                                 
-                
-                   
-
 
 
                     // chiudi click function
