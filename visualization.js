@@ -53,7 +53,10 @@ var map_ae26379126cd4ce79aea9d0f395ec09f = L.map(
             }
         }
 
+
         function geo_json_dc64d985f99647e7b35676bc82a64cc7_onEachFeature(feature, layer) {
+
+            
             layer.on({
                 mouseout: function(e) {
                     geo_json_dc64d985f99647e7b35676bc82a64cc7.resetStyle(e.target);
@@ -63,20 +66,15 @@ var map_ae26379126cd4ce79aea9d0f395ec09f = L.map(
                 },
                 click: function(e) {
                     map_ae26379126cd4ce79aea9d0f395ec09f.fitBounds(e.target.getBounds());
+                    $.getJSON("csvjson.json", function (arrayItem) {
+                        if (arrayItem["Comune"] == e.target.feature.properties.NOME_COM){
+                            $("#welcome").html(feature.properties.NOME_COM)
 
-                                   $.ajax({
-                                dataType: "json",
-                                    url: "https://raw.githubusercontent.com/dersuchendee/openaccessprova/master/csvjson.json",
-                                    success: function(dati) {
-                                        dati.forEach(function(arrayItem) {
-                                            if (arrayItem["Comune"] == e.target.feature.properties.NOME_COM) {
-                                                    $('#welcome').remove();
-
-                                                }
-                                        })
-                                    }
-
-                                    })
+                        } 
+});
+                   
+                    
+                   
 
 
                     // chiudi click function
