@@ -64,18 +64,14 @@ var map_ae26379126cd4ce79aea9d0f395ec09f = L.map(
                 click: function(e) {
                     map_ae26379126cd4ce79aea9d0f395ec09f.fitBounds(e.target.getBounds());
 
-                            $.ajax({
+                                   $.ajax({
                                 dataType: "json",
                                     url: "csvjson.json",
                                     success: function(dati) {
                                         dati.forEach(function(arrayItem) {
                                             if (arrayItem["Comune"] == e.target.feature.properties.NOME_COM) {
                                                     $('#welcome').remove();
-                                                    $('.information').html('');
-                                                    $('.information').html('<div class="card alert-success mb-3"> <h3 class="card-header">Zona '
-                                                        + arrayItem["Comune"] +'</h3> <div class="card-body text-right pb-0"> <ul style="list-style-type:none"> <li><h6> Quartiere: '+ 
-                                                        e.target.PUNTEGGIOSCUOLA1516 +'</h6></li> <li><h6> Abitanti (2017): '+ e.target.numero_di_scuole +
-                                                        '</h6></li> </ul> </div> </div>');
+
                                                 }
                                         })
                                     }
@@ -87,8 +83,6 @@ var map_ae26379126cd4ce79aea9d0f395ec09f = L.map(
                 }
             });
         };
-        
-        
 
           
         
