@@ -8,8 +8,8 @@
         </script>
     
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
-            
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
@@ -37,9 +37,17 @@
                     width:50%;
                     float:right;
                 }
-                
+                #information {
+                    width:50%;
+                    float: right;
+                }
+                #chartContainer {
+                    width:200px;
+                    height:200px;
+                    float: right;
+                }
             </style>
-        
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
@@ -47,25 +55,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
     <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+    <script src="myjson.js"></script> 
 </head>
 <body>    
     
             
-            <div class="folium-map" id="map_ae26379126cd4ce79aea9d0f395ec09f" ><script src="visualization.js"></script></div>
+            <div class="folium-map" id="map_ae26379126cd4ce79aea9d0f395ec09f" ></div>
 
        
             <div id="welcome" class="card alert-success mb-3">
                             <h3 class="card-header">Esplora i nostri dataset!</h3> 
                             <div class="card-body text-center pb-0"> 
                                 <h6>Seleziona una Zona di Bologna all'interno della mappa per visualizzarne i dati</h6>
-                                <div class="information">
-                                    <h1> ciao </h1>
-                                </div>
+                                
                                 <h2> ciao </h2>
                             </div>
+
                             
             </div>
+            <div id="information">
+                                    <h1> ciao </h1>
+                                </div>
+            <div id="chartContainer">
+                                    <h1> proovo </h1>
+                                </div>
+
+            <div> <script src="js/visualization.js"></script>   </div>
 </div></div></div>
 
-        
+      
 </body>
